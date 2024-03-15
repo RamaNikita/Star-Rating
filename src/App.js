@@ -1,7 +1,17 @@
+import { useState } from "react";
+
 function App(props) {
+  const [checked, setChecked] = useState(false);
   return (
     <>
-      <h1>Star Rating....{props.name}</h1>
+      <div>
+        <input
+          type="checkbox"
+          value={checked}
+          onChange={() => setChecked(!checked)}
+        />
+        <p>{checked ? "Checked" : "Not Checked"}</p>
+      </div>
     </>
   );
 }
